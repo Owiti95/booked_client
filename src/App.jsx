@@ -51,7 +51,11 @@ import { UserProvider } from "./pages/UserContext";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
 import Footer from "./components/footer/Footer"; // Ensure Footer is defined and imported
+
 import AdminDashboard from "./pages/AdminDashboard";
+
+import "./App.css"
+
 
 const App = () => {
   // Check if the user is registered (using localStorage for simplicity)

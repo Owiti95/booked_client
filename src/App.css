@@ -1,9 +1,8 @@
 :root {
   margin: 0 auto;
   text-align: center;
-    --main-color: #4e41b1;
-    --secondary-color: #efeefc;
-    /* --font-size-large: 1.5rem; */
+  --main-color: #4e41b1;
+  --secondary-color: #efeefc;
 }
 
 .logo {
