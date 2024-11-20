@@ -105,6 +105,10 @@
     .logo {
         width: 15rem;
       }
+
+      .booked_footer {
+        padding: 10rem 0;
+      }
 }
 
 @media screen and (max-width: 800px) {
@@ -112,6 +116,10 @@
         column-gap: 4.8rem;
         row-gap: 6.4rem;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .booked_footer {
+      padding: 8rem 0;
     }
 }
 
@@ -124,5 +132,9 @@
 
     .logo {
         width: 12rem;
+      }
+
+      .booked_footer {
+        padding: 4rem 0;
       }
 }
