@@ -14,6 +14,8 @@ const App = () => {
   const isRegistered = localStorage.getItem("isRegistered");
 
   return (
+
+        <main>
     <UserProvider>
       <BrowserRouter>
         <Navbar />
@@ -30,8 +32,10 @@ const App = () => {
             element={isRegistered ? <Navigate to="/login" replace /> : <Register />}
           />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </UserProvider>
+         </main>
   );
 };
 
