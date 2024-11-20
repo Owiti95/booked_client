@@ -1,69 +1,75 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FaCartShopping } from "react-icons/fa6";
 import { UserContext } from "../../pages/UserContext";
-import "./navbar.css"; // Import the CSS file
+import "./navbar.css"
 
 function Navbar() {
   const { currentUser, setCurrentUser } = useContext(UserContext);
   const navigate = useNavigate();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLogout = () => {
+    // Remove token and user details
     localStorage.removeItem("token");
     setCurrentUser(null);
-    navigate("/login");
-  };
 
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
+    // Redirect to login page
+    navigate("/login");
   };
 
   return (
     <nav className="booked_navbar">
-      <ul className="booked_navbar-list"
-        style={{
-          display: "flex",
-          gap: "1rem",
-          listStyle: "none",
-          margin: 0,
-        }}
-      >
-        <img className="logo" alt="booked logo" src="./public/booked_logo.png" />
-          
-    <nav className="navbar">
-      {/* Hamburger Icon */}
-      <button className="hamburger" onClick={toggleMenu}>
-        <span className="line"></span>
-        <span className="line"></span>
-        <span className="line"></span>
-      </button>
+      <img className="logo" alt="booked logo" src="./public/booked_logo.png" />
 
-      {/* Navbar List */}
-      <ul className={`menu ${isMenuOpen ? "open" : ""}`}>
+      <ul className="booked_navbar-list">
         <li>
-          <Link to="/">Home</Link>
+          <Link className="booked_navbar-link" to="/">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/store">Store</Link>
+          <Link className="booked_navbar-link" to="/store">
+            Store
+          </Link>
         </li>
         <li>
-          <Link to="/library">Library</Link>
+          <Link className="booked_navbar-link" to="/library">
+            Library
+          </Link>
         </li>
         <li>
-          <Link to="/cart">Cart</Link>
+          <Link className="booked_navbar-link" to="/cart">
+          <FaCartShopping />
+          </Link>
         </li>
         {!currentUser ? (
           <>
             <li>
-              <Link to="/login">Login</Link>
+              <Link
+                className="booked_navbar-link" to="/login">
+                Login
+              </Link>
             </li>
             <li>
-              <Link to="/register">Register</Link>
+              <Link
+                className="booked_navbar-link_register" to="/register">
+                Register
+              </Link>
             </li>
           </>
         ) : (
           <li>
-            <button onClick={handleLogout}>Logout</button>
+            <button className="booked_logout-btn"
+              onClick={handleLogout}
+              style={{
+                color: "#fff",
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+              }}
+            >
+              Logout
+            </button>
           </li>
         )}
       </ul>
