@@ -1,6 +1,6 @@
 .booked_hero-textbox {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
-    url("https://img.freepik.com/free-photo/young-student-learning-library_23-2149215408.jpg?t=st=1732011457~exp=1732015057~hmac=af6a555292ba8f55899a9c625a67aba95a99d1174ff993d016550be2796b6129&w=1480");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     height: 100vh;
     width: auto;
     background-size: cover; /* Ensures the image covers the element */
@@ -22,7 +22,7 @@
 }
 
 .heading-primary span {
-    color: #7167c1;
+    color: #b8b3e0;
     font-style: italic;
 }
 
