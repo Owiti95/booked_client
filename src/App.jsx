@@ -51,7 +51,16 @@ import { UserProvider } from "./pages/UserContext";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
 import Footer from "./components/footer/Footer"; // Ensure Footer is defined and imported
+import BookDetail from "./components/book_detail/BookDetail"
 import "./App.css"
+
+const MainLayout = ({ children }) => (
+  <>
+    <Navbar />
+    {children}
+    <Footer />
+  </>
+);
 
 
 const App = () => {
@@ -62,14 +71,17 @@ const App = () => {
     <main className="app-container">
       <UserProvider>
         <BrowserRouter>
-          <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/store" element={<Store />} />
-            <Route path="/library" element={<Library />} />
-            <Route path="/cart" element={<CartCheckout />} />
+            {/* Routes with navbar and footer */}
+            <Route path="/" element={<MainLayout><Home/></MainLayout>} />
+            <Route path="/store" element={<MainLayout><Store/></MainLayout>} />
+            <Route path="/library" element={<MainLayout><Library/></MainLayout>} />
+            <Route path="/cart" element={<MainLayout><CartCheckout/></MainLayout>} />
+            <Route path="/details" element={<MainLayout><BookDetail/></MainLayout>} />
+
+            {/* Route paths without login and footer */}
             <Route path="/login" element={<Login />} />
-            
+            <Route path="/details" element={<BookDetail/>} />
             {/* Conditionally render the Register route */}
             <Route
               path="/register"
@@ -79,7 +91,6 @@ const App = () => {
             <Route path="*" element={<Navigate to="/" replace />} />
             
           </Routes>
-          <Footer />
         </BrowserRouter>
       </UserProvider>
     </main>
