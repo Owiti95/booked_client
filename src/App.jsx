@@ -51,6 +51,7 @@ import { UserProvider } from "./pages/UserContext";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
 import Footer from "./components/footer/Footer"; // Ensure Footer is defined and imported
+import AdminDashboard from "./pages/AdminDashboard";
 
 const App = () => {
   // Check if the user is registered (using localStorage for simplicity)
@@ -73,9 +74,11 @@ const App = () => {
               path="/register"
               element={isRegistered ? <Navigate to="/login" replace /> : <Register />}
             />
+            <Route path="/admin" element={<AdminDashboard />}/>
 
             {/* Fallback route for undefined paths */}
             <Route path="*" element={<Navigate to="/" replace />} />
+            
           </Routes>
           <Footer />
         </BrowserRouter>
