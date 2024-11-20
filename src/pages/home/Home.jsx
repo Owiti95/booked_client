@@ -76,7 +76,7 @@ const Home = () => (
                     </div>
                 </div>
             </div>
-            <img src="https://img.freepik.com/free-photo/young-student-learning-library_23-2149215406.jpg?t=st=1732052797~exp=1732056397~hmac=23375a3a847dc755a0f67f0b35268f21d714994a2735b6c37428188851c74632&w=1480"/>
+            <img src="https://images.unsplash.com/photo-1561380851-39b27c4f1626?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fGxpYnJhcnl8ZW58MHx8MHx8fDA%3D"/>
         </div>
         
         <div className="booked_button-container">
