@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './cart_checkout.css';
+
 
 const CartCheckout = () => {
   const [cartItems, setCartItems] = useState([]);
