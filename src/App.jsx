@@ -14,6 +14,7 @@ import './App.css'
 const App = () => {
   return (
     <BrowserRouter>
+        <main>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/store" element={<Store />} />
         </Routes>
         <Footer/>
+        </main>
     </BrowserRouter>
   );
 };
