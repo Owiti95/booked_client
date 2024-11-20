@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Register = () => {
@@ -6,13 +7,19 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post("http://127.0.0.1:5000/user/register", { name, email, password });
       console.log("Registration successful:", response.data);
-      // Redirect to login or events page after successful registration
+
+      // Set registration status in localStorage
+      localStorage.setItem("isRegistered", true);
+
+      // Redirect to login page
+      navigate("/login");
     } catch (err) {
       setError(err.response.data.error || "Registration failed.");
     }
