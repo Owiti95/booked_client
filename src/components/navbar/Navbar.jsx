@@ -19,6 +19,17 @@ function Navbar() {
   };
 
   return (
+    <nav className="booked_navbar">
+      <ul className="booked_navbar-list"
+        style={{
+          display: "flex",
+          gap: "1rem",
+          listStyle: "none",
+          margin: 0,
+        }}
+      >
+        <img className="logo" alt="booked logo" src="./public/booked_logo.png" />
+          
     <nav className="navbar">
       {/* Hamburger Icon */}
       <button className="hamburger" onClick={toggleMenu}>
