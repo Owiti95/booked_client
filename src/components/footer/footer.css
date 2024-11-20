@@ -101,6 +101,10 @@
         row-gap: 5.6rem;
         grid-template-columns: 1fr 1fr 1fr;
     }
+
+    .logo {
+        width: 15rem;
+      }
 }
 
 @media screen and (max-width: 800px) {
@@ -117,4 +121,8 @@
         row-gap: 2.4rem;
         grid-template-columns: 1fr;
     }
+
+    .logo {
+        width: 12rem;
+      }
 }

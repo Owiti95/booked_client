@@ -1,0 +1,13 @@
+.booked_navbar {
+    display: none;
+    padding: 1rem;
+    background-color: hsl(0, 0%, 20%);
+    color: #fff;
+}
+
+.booked_navbar-list {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+}

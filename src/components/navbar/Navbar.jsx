@@ -16,8 +16,8 @@ function Navbar() {
   };
 
   return (
-    <nav style={{ padding: "1rem", backgroundColor: "#333", color: "#fff" }}>
-      <ul
+    <nav className="booked_navbar">
+      <ul className="booked_navbar-list"
         style={{
           display: "flex",
           gap: "1rem",
@@ -25,6 +25,8 @@ function Navbar() {
           margin: 0,
         }}
       >
+        <img className="logo" alt="booked logo" src="./public/booked_logo.png" />
+
         <li>
           <Link to="/" style={{ color: "#fff", textDecoration: "none" }}>
             Home
