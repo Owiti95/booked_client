@@ -1,82 +1,58 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../pages/UserContext";
+import "./navbar.css"; // Import the CSS file
 
 function Navbar() {
   const { currentUser, setCurrentUser } = useContext(UserContext);
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLogout = () => {
-    // Remove token and user details
     localStorage.removeItem("token");
     setCurrentUser(null);
-
-    // Redirect to login page
     navigate("/login");
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
   return (
-    <nav style={{ padding: "1rem", backgroundColor: "#333", color: "#fff" }}>
-      <ul
-        style={{
-          display: "flex",
-          gap: "1rem",
-          listStyle: "none",
-          margin: 0,
-        }}
-      >
+    <nav className="navbar">
+      {/* Hamburger Icon */}
+      <button className="hamburger" onClick={toggleMenu}>
+        <span className="line"></span>
+        <span className="line"></span>
+        <span className="line"></span>
+      </button>
+
+      {/* Navbar List */}
+      <ul className={`menu ${isMenuOpen ? "open" : ""}`}>
         <li>
-          <Link to="/" style={{ color: "#fff", textDecoration: "none" }}>
-            Home
-          </Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/store" style={{ color: "#fff", textDecoration: "none" }}>
-            Store
-          </Link>
+          <Link to="/store">Store</Link>
         </li>
         <li>
-          <Link to="/library" style={{ color: "#fff", textDecoration: "none" }}>
-            Library
-          </Link>
+          <Link to="/library">Library</Link>
         </li>
         <li>
-          <Link to="/cart" style={{ color: "#fff", textDecoration: "none" }}>
-            Cart
-          </Link>
+          <Link to="/cart">Cart</Link>
         </li>
         {!currentUser ? (
           <>
             <li>
-              <Link
-                to="/login"
-                style={{ color: "#fff", textDecoration: "none" }}
-              >
-                Login
-              </Link>
+              <Link to="/login">Login</Link>
             </li>
             <li>
-              <Link
-                to="/register"
-                style={{ color: "#fff", textDecoration: "none" }}
-              >
-                Register
-              </Link>
+              <Link to="/register">Register</Link>
             </li>
           </>
         ) : (
           <li>
-            <button
-              onClick={handleLogout}
-              style={{
-                color: "#fff",
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-              }}
-            >
-              Logout
-            </button>
+            <button onClick={handleLogout}>Logout</button>
           </li>
         )}
       </ul>
