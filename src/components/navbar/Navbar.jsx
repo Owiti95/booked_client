@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaCartShopping } from "react-icons/fa6";
 import { UserContext } from "../../pages/UserContext";
-import "./navbar.css"
+import "./navbar.css";
 
 function Navbar() {
   const { currentUser, setCurrentUser } = useContext(UserContext);
@@ -29,12 +29,11 @@ function Navbar() {
     localStorage.removeItem("userToken");
     setCurrentUser(null);
     setIsAdmin(false);
-    navigate("/login");
+    navigate("/login"); // Redirect to login page
   };
 
-
-    // Redirect to login page
-    navigate("/login");
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
   };
 
   return (
@@ -45,7 +44,7 @@ function Navbar() {
         <span className="line"></span>
       </button>
       <img className="logo" alt="booked logo" src="./public/booked_logo.png" />
-       
+
       <ul className={`booked_navbar-list ${isMenuOpen ? "open" : ""}`}>
         <li>
           <Link className="booked_navbar-link" to="/">
@@ -64,32 +63,33 @@ function Navbar() {
         </li>
         <li>
           <Link className="booked_navbar-link" to="/cart">
-          <FaCartShopping />
+            <FaCartShopping />
           </Link>
-         <li>
-          <Link className="booked_navbar-link" to="/admin">
-          Admin
-          </Link>
-         </li>
         </li>
+        {isAdmin && (
+          <li>
+            <Link className="booked_navbar-link" to="/admin">
+              Admin
+            </Link>
+          </li>
+        )}
         {!currentUser ? (
           <>
             <li>
-              <Link
-                className="booked_navbar-link" to="/login">
+              <Link className="booked_navbar-link" to="/login">
                 Login
               </Link>
             </li>
             <li>
-              <Link
-                className="booked_navbar-link_register" to="/register">
+              <Link className="booked_navbar-link_register" to="/register">
                 Register
               </Link>
             </li>
           </>
         ) : (
           <li>
-            <button className="booked_logout-btn"
+            <button
+              className="booked_logout-btn"
               onClick={handleLogout}
               style={{
                 color: "#fff",
@@ -108,4 +108,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
