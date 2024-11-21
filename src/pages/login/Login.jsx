@@ -1,10 +1,9 @@
 import "./login.css";
-
-
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { UserContext } from "../UserContext";
 import { useNavigate } from "react-router-dom";
+import jwtDecode from "jwt-decode";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -17,26 +16,46 @@ const Login = () => {
     e.preventDefault();
 
     try {
+      // Send login credentials to the backend
       const response = await axios.post(
         "http://127.0.0.1:5000/user/login",
         { email, password },
-        { withCredentials: false } // Update as needed for cookies
+        { withCredentials: true } // Include cookies for CSRF protection, if applicable
       );
 
-      // Store token in localStorage
-      localStorage.setItem("token", response.data.access_token);
+      // Extract the JWT token from the response
+      const token = response.data.access_token;
+      if (!token) throw new Error("No token received from the server");
 
-      // Update user context
-      setCurrentUser(response.data.user);
+      // Store the JWT token securely in localStorage
+      localStorage.setItem("token", token);
 
-      if (response.data.user && response.data.user.name) {
+      // Decode the JWT token to extract user info
+      const decodedToken = jwtDecode(token);
+      console.log("Decoded Token: ", decodedToken);
+
+      // Update the user context with user information
+      setCurrentUser({
+        id: decodedToken.sub,
+        email: email,
+        is_admin: decodedToken.is_admin,
+      });
+
+      // Set a welcome message for the logged-in user
+      if (response.data.user?.name) {
         setWelcomeMessage(`Welcome ${response.data.user.name}`);
       }
 
-      // Redirect to another page (e.g., bookstore)
-      navigate("/store");
+      // Redirect the user based on their role
+      if (decodedToken.is_admin) {
+        console.log("Admin user logged in, redirecting to admin page.");
+        navigate("/admin"); // Admin page for admins
+      } else {
+        console.log("Non-admin user logged in, redirecting to store page.");
+        navigate("/store"); // Store page for regular users
+      }
     } catch (err) {
-      console.error(err);
+      console.error("Login error:", err);
       if (err.response) {
         alert(err.response.data.error || "Login failed!");
       } else {
@@ -84,4 +103,3 @@ const Login = () => {
 };
 
 export default Login;
-``
