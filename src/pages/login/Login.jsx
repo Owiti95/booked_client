@@ -1,7 +1,6 @@
 import "./login.css";
-
-
 import React, { useState, useContext } from "react";
+import {Link } from 'react-router-dom';
 import axios from "axios";
 import { UserContext } from "../UserContext";
 import { useNavigate } from "react-router-dom";
@@ -75,6 +74,11 @@ const Login = () => {
               <button type="submit" className="login-button">
               Login
               </button>
+              <Link to="/register">
+              <button type="submit" className="login-button">
+              Register
+              </button>
+              </Link>
             </form>
             {welcomeMessage && <h2>{welcomeMessage}</h2>}
           </div>
