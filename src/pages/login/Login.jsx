@@ -52,10 +52,10 @@ const Login = () => {
       </div>
       <div className="booked_form-container">
         <img src="./public/booked_logo.png" className="booked_login-logo"/>
-          <div className="login-form-wrapper">
+          <div className="booked_form-wrapper">
             <p className="booked_welcome">Welcome!</p>
             <h2>Login to your account</h2>
-            <form onSubmit={handleSubmit} className="login-form">
+            <form onSubmit={handleSubmit} className="booked_form">
               <label for="email">Email</label>
               <input
               id="email"
@@ -72,7 +72,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
               required/>
-              <button type="submit" className="login-button">
+              <button type="submit" className="booked_button">
               Login
               </button>
             </form>
