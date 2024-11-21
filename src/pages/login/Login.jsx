@@ -46,29 +46,38 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-form-wrapper">
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit} className="login-form">
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            required
-          />
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            required
-          />
-          <button type="submit" className="login-button">
-            Login
-          </button>
-        </form>
-        {welcomeMessage && <h2>{welcomeMessage}</h2>}
+    <div className="booked_login-container">
+      <div className="booked_login-img_container">
+        <img src="https://images.unsplash.com/photo-1561379331-b07f7431ade1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGlicmFyeXxlbnwwfDF8MHx8fDA%3D" alt="Girl stepping on books to reach a shelf"/>
+      </div>
+      <div className="booked_form-container">
+        <img src="./public/booked_logo.png" className="booked_login-logo"/>
+          <div className="login-form-wrapper">
+            <p className="booked_welcome">Welcome!</p>
+            <h2>Login to your account</h2>
+            <form onSubmit={handleSubmit} className="login-form">
+              <label for="email">Email</label>
+              <input
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              required/>
+              <label for="password">Password</label>
+              <input
+              id="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              required/>
+              <button type="submit" className="login-button">
+              Login
+              </button>
+            </form>
+            {welcomeMessage && <h2>{welcomeMessage}</h2>}
+          </div>
       </div>
     </div>
   );
