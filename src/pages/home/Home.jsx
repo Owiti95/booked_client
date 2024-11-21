@@ -1,12 +1,35 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {Link } from 'react-router-dom';
 import "./home.css"
 import BookCard from "../../components/book_card/BookCard";
 
-const Home = () => (
-    <>
+const Home = () => {
+    const images = [
+        "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1514894780887-121968d00567?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njh8fGxpYnJhcnl8ZW58MHx8MHx8fDA%3D",
+        "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzl8fGxpYnJhcnl8ZW58MHx8MHx8fDA%3D",
+        "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTEyfHxsaWJyYXJ5fGVufDB8fDB8fHww",
+      ];
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+      
+
+useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(interval); // Cleanup on component unmount
+  }, [images.length]);
+
+  const myStyle = {
+    backgroundImage:
+    `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(${images[currentImageIndex]})`
+    }
+
+       
+return (    <>
     <section className="booked_hero-section" >
-        <div className="booked_hero-textbox">
+        <div className="booked_hero-textbox" style={myStyle}>
             <h1 className="heading-primary">
                 Read  to <span>develop</span> your brain
             </h1>
@@ -85,5 +108,6 @@ const Home = () => (
     </section>
     </>
 )
+}
 
 export default Home;

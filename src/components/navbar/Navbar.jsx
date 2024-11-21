@@ -1,72 +1,8 @@
-// import React, { useContext, useState } from "react";
-// import { Link, useNavigate } from "react-router-dom";
-// import { UserContext } from "../../pages/UserContext";
-// import "./navbar.css"; // Import the CSS file
-
-// function Navbar() {
-//   const { currentUser, setCurrentUser } = useContext(UserContext);
-//   const navigate = useNavigate();
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-//   const handleLogout = () => {
-//     localStorage.removeItem("token");
-//     setCurrentUser(null);
-//     navigate("/login");
-//   };
-
-//   const toggleMenu = () => {
-//     setIsMenuOpen((prev) => !prev);
-//   };
-
-//   return (
-//     <nav className="navbar">
-//       {/* Hamburger Icon */}
-//       <button className="hamburger" onClick={toggleMenu}>
-//         <span className="line"></span>
-//         <span className="line"></span>
-//         <span className="line"></span>
-//       </button>
-
-//       {/* Navbar List */}
-//       <ul className={`menu ${isMenuOpen ? "open" : ""}`}>
-//         <li>
-//           <Link to="/">Home</Link>
-//         </li>
-//         <li>
-//           <Link to="/store">Store</Link>
-//         </li>
-//         <li>
-//           <Link to="/library">Library</Link>
-//         </li>
-//         <li>
-//           <Link to="/cart">Cart</Link>
-//         </li>
-//         {!currentUser ? (
-//           <>
-//             <li>
-//               <Link to="/login">Login</Link>
-//             </li>
-//             <li>
-//               <Link to="/register">Register</Link>
-//             </li>
-//           </>
-//         ) : (
-//           <li>
-//             <button onClick={handleLogout}>Logout</button>
-//           </li>
-//         )}
-//       </ul>
-//     </nav>
-//   );
-// }
-
-// export default Navbar;
-
-
 import React, { useContext, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FaCartShopping } from "react-icons/fa6";
 import { UserContext } from "../../pages/UserContext";
-import "./navbar.css";
+import "./navbar.css"
 
 function Navbar() {
   const { currentUser, setCurrentUser } = useContext(UserContext);
@@ -96,31 +32,75 @@ function Navbar() {
     navigate("/login");
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
+
+    // Redirect to login page
+    navigate("/login");
   };
 
   return (
-    <nav className="navbar">
+    <nav className="booked_navbar">
       <button className="hamburger" onClick={toggleMenu}>
         <span className="line"></span>
         <span className="line"></span>
         <span className="line"></span>
       </button>
-      <ul className={`menu ${isMenuOpen ? "open" : ""}`}> {/* Fixed */}
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/store">Store</Link></li>
-        <li><Link to="/library">Library</Link></li>
-        <li><Link to="/cart">Cart</Link></li>
-        {/* Conditionally render Admin link */}
-        <li><Link to="/admin">Admin</Link></li>
+      <img className="logo" alt="booked logo" src="./public/booked_logo.png" />
+       
+      <ul className={`booked_navbar-list ${isMenuOpen ? "open" : ""}`}>
+        <li>
+          <Link className="booked_navbar-link" to="/">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link className="booked_navbar-link" to="/store">
+            Store
+          </Link>
+        </li>
+        <li>
+          <Link className="booked_navbar-link" to="/library">
+            Library
+          </Link>
+        </li>
+        <li>
+          <Link className="booked_navbar-link" to="/cart">
+          <FaCartShopping />
+          </Link>
+         <li>
+          <Link className="booked_navbar-link" to="/admin">
+          Admin
+          </Link>
+         </li>
+        </li>
         {!currentUser ? (
           <>
-            <li><Link to="/login">Login</Link></li>
-            <li><Link to="/register">Register</Link></li>
+            <li>
+              <Link
+                className="booked_navbar-link" to="/login">
+                Login
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="booked_navbar-link_register" to="/register">
+                Register
+              </Link>
+            </li>
           </>
         ) : (
-          <li><button onClick={handleLogout}>Logout</button></li>
+          <li>
+            <button className="booked_logout-btn"
+              onClick={handleLogout}
+              style={{
+                color: "#fff",
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+              }}
+            >
+              Logout
+            </button>
+          </li>
         )}
       </ul>
     </nav>

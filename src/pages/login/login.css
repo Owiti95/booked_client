@@ -1,69 +1,27 @@
-/* Container for the login page */
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f9;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+
+
   
-  /* Wrapper for the login form */
-  .login-form-wrapper {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 100%;
-    max-width: 400px;
-  }
   
-  /* Form header */
-  .login-form-wrapper h2 {
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-    color: #333333;
-  }
   
-  /* The login form itself */
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+
+
+
+
+   
+
   
-  /* Input fields styling */
-  .login-form input {
-    padding: 0.8rem;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
+
+
+
   
-  /* Input focus effect */
-  .login-form input:focus {
-    outline: none;
-    border-color: #4a90e2;
-    box-shadow: 0 0 4px rgba(74, 144, 226, 0.5);
-  }
+
   
-  /* Submit button styling */
-  .login-button {
-    background-color: #4a90e2;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 0.8rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+
+  
+
   
   /* Button hover effect */
-  .login-button:hover {
+  .booked_button:hover {
     background-color: #357ab8;
   }
   
@@ -72,6 +30,18 @@
     margin-top: 1rem;
     font-size: 1.2rem;
     color: #4caf50;
+  }
+
+  @media screen and (max-width: 1100px) {
+    .booked_login-img_container img {
+      display: none;
+    }
+    .booked_login-container {
+      display: inline-block;
+    }
+
+    .booked_form-container {
+      margin-top: 5rem;
   }
   
   /* Responsive design */
@@ -85,4 +55,4 @@
       font-size: 0.9rem;
     }
   }
-  
+}

@@ -186,9 +186,19 @@ import CartCheckout from "./pages/cart_checkout/CartCheckout";
 import { UserProvider } from "./pages/UserContext";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
-import Footer from "./components/footer/Footer";
 import AdminPage from "./pages/AdminDashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Footer from "./components/footer/Footer"; // Ensure Footer is defined and imported
+import BookDetail from "./components/book_detail/BookDetail"
+import "./App.css"
+
+const MainLayout = ({ children }) => (
+  <>
+    <Navbar />
+    {children}
+    <Footer />
+  </>
+);
 
 const App = () => {
   const isRegistered = localStorage.getItem("isRegistered");
@@ -197,17 +207,23 @@ const App = () => {
     <main className="app-container">
       <UserProvider>
         <Router>
-          <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/store" element={<Store />} />
-            <Route path="/library" element={<Library />} />
-            <Route path="/cart" element={<CartCheckout />} />
+            {/* Routes with navbar and footer */}
+            <Route path="/" element={<MainLayout><Home/></MainLayout>} />
+            <Route path="/store" element={<MainLayout><Store/></MainLayout>} />
+            <Route path="/library" element={<MainLayout><Library/></MainLayout>} />
+            <Route path="/cart" element={<MainLayout><CartCheckout/></MainLayout>} />
+            <Route path="/details" element={<MainLayout><BookDetail/></MainLayout>} />
+
+            {/* Route paths without login and footer */}
             <Route path="/login" element={<Login />} />
+
+            {/* Conditionally render the Register route */}
             <Route
               path="/register"
               element={isRegistered ? <Navigate to="/login" replace /> : <Register />}
             />
+
             <Route
               path="/admin"
               element={
@@ -216,10 +232,13 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
+
+            {/* Fallback route for undefined paths */}
+
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
-          <Footer />
         </Router>
+        </BrowserRouter>
       </UserProvider>
     </main>
   );
