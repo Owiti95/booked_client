@@ -95,11 +95,11 @@ const Login = () => {
               <button type="submit" className="booked_button">
               Login
               </button>
-              <Link to="/register">
-              <button type="submit" className="login-button">
+              <button className="booked_button">
+              <Link className="booked_button-link" to="/register">
               Register
-              </button>
               </Link>
+              </button>
             </form>
             {welcomeMessage && <h2>{welcomeMessage}</h2>}
           </div>
