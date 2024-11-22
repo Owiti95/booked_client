@@ -5,13 +5,14 @@
     top: 224em;
     left: 60em;
     padding: 2rem 1.5rem 2rem 1.5rem;
-    border-radius: 0.5em 0.5em 0em 0em;
-    
+    border-radius: 0.5em;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
     border: 1px solid #0909371A;
 }
 
 .booked_book-img {
-    /* width: 200px; */
+    width: 150rem;
     height: auto;
     border-radius: 4px 4px 4px 4px;
 }
@@ -28,11 +29,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .booked_card-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     line-height: 25px;
     text-align: left;
@@ -40,8 +40,18 @@
     text-decoration-skip-ink: none;
 }
 
+.booked_card-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-start;
+    gap:1rem;
+    margin:1rem 0rem 1rem 0rem;
+}
+
 .booked_card-author {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 400;
     line-height: 20px;
     text-align: left;
@@ -49,14 +59,13 @@
     text-decoration-skip-ink: none;
 }
 
-.booked_card-price {
-    font-size: 2.4rem;
+.booked_strong {
     font-weight: 700;
-    line-height: 30px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    color: var(--main-color);
+}
+
+.booked_btns {
+    display: flex;
+    justify-content: space-around;
 }
 
 .booked_btn,
@@ -155,11 +164,6 @@
     .booked_card-author {
         font-size: 1rem;
         line-height: 12px;
-    }
-
-    .booked_card-price {
-        font-size: 1.4rem;
-        line-height: 20px;
     }
 
     .booked_btn,

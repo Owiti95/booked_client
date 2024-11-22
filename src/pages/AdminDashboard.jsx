@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import StoreDeleteEdit from "../components/StoreDeleteEdit";
-import CreateEvent from "../components/CreateStoreBook";
+import CreateStoreBook from "../components/create_store_book/CreateStoreBook";
 import "../index.css";
 
 const AdminDashboard = () => {
@@ -126,10 +126,10 @@ const AdminDashboard = () => {
 
   return (
     <div className="admin-dashboard">
-      <h1 className="page-title">Admin Dashboard</h1>
+      <h1 className="heading-secondary">Admin Dashboard</h1>
 
       <div className="create-book-section">
-        <CreateEvent
+        <CreateStoreBook
           onSubmit={handleFormSubmit}
           newEvent={newBook}
           onInputChange={handleInputChange}

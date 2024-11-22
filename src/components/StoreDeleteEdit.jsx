@@ -1,38 +1,17 @@
 import React from "react";
+import BookCardStore from "./book_card_store/BookCardStore";
 
 const EventList = ({ events, onEditEvent, onDeleteEvent }) => {
   return (
     <div className="event-list">
-      <h2>Book List</h2>
+      <h2 className="heading-tertiary" style={{textAlign: "center", marginTop: "4.8rem", marginBottom: "2.4rem"}}>Book List</h2>
       {events.length === 0 ? (
         <p>No books available</p>
       ) : (
-        <ul>
+        <ul className="booked_book-items">
           {events.map((book) => (
-            <li key={book.id} className="event-item">
-              <h3>{book.title}</h3>
-              <p><strong>Author:</strong> {book.author}</p>
-              <p><strong>Genre:</strong> {book.genre}</p>
-              <p><strong>ISBN:</strong> {book.isbn}</p>
-              <p><strong>Price:</strong> ${book.price.toFixed(2)}</p>
-              <p><strong>Stock:</strong> {book.stock}</p>
-              {book.image_url && (
-                <img
-                  src={book.image_url}
-                  alt={book.title}
-                  className="book-image"
-                />
-              )}
-              <div className="action-buttons">
-                <button
-                  onClick={() =>
-                    onEditEvent(book)
-                  }
-                >
-                  Edit
-                </button>
-                <button onClick={() => onDeleteEvent(book.id)}>Delete</button>
-              </div>
+            <li key={book.id} className="booked_book-item">
+              <BookCardStore title={book.title} author={book.author} genre={book.genre} isbn={book.isbn} price={book.price} stock={book.stock} img_url={book.image_url} book_id={book.id} onEdit={onEditEvent} book={book} onDelete={onDeleteEvent}/>
             </li>
           ))}
         </ul>

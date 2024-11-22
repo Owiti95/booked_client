@@ -130,6 +130,11 @@ a:hover {
   font-family: inherit;
   transition: all 0.3s;
   background-color: var(--main-color);
+  color:white;
+}
+
+.btn:hover {
+  transform: scale(1.1);
 }
 
 .grid_4-cols {
@@ -277,6 +282,21 @@ a:hover {
   color: #4caf50;
 }
 
+/* Admin Panel */
+.admin-dashboard {
+  padding: 2rem 4.8rem;
+}
+
+/* ********************* */
+/* Store Delete Edit Component */
+/* ********************* */
+.booked_book-items {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1rem;
+}
+
 /* Responsive design */
 @media screen and (max-width: 1100px) {
   .booked_login-img_container img {
@@ -290,6 +310,14 @@ a:hover {
     margin-top: 5rem;
 }
 
+@media (max-width: 850px) {
+  .booked_book-items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+
+  }
+}
+
 @media (max-width: 600px) {
   .booked_form-wrapper{
     padding: 1.5rem;
@@ -300,4 +328,9 @@ a:hover {
     font-size: 0.9rem;
   }
 }
+}
+
+@media (max-width: 480px) {
+  .booked_book-items {
+    grid-template-columns: repeat(1, 1fr);}
 }
