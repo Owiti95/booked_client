@@ -1,5 +1,6 @@
 import "./login.css";
 import React, { useState, useContext } from "react";
+import {Link } from 'react-router-dom';
 import axios from "axios";
 import { UserContext } from "../UserContext";
 import { useNavigate } from "react-router-dom";
@@ -93,6 +94,11 @@ const Login = () => {
               required/>
               <button type="submit" className="booked_button">
               Login
+              </button>
+              <button className="booked_button">
+              <Link className="booked_button-link" to="/register">
+              Register
+              </Link>
               </button>
             </form>
             {welcomeMessage && <h2>{welcomeMessage}</h2>}
