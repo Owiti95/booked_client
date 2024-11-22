@@ -43,7 +43,7 @@ const App = () => {
             {/* Conditionally render the Register route */}
             <Route
               path="/register"
-              element={isRegistered ? <Navigate to="/login" replace /> : <Register />}
+              element= {<Register />}
             />
 
             <Route
@@ -60,7 +60,6 @@ const App = () => {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Router>
-        {/* </BrowserRouter> */}
       </UserProvider>
     </main>
   );
