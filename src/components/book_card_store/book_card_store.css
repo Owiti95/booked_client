@@ -11,9 +11,9 @@
     border: 1px solid #0909371A;
 }
 
-.booked_book-img {
-    width: 150rem;
-    height: auto;
+.booked_book-image {
+    width: 18rem;
+    height: 24rem;
     border-radius: 4px 4px 4px 4px;
 }
 
@@ -102,7 +102,7 @@
     }
 
     .booked_book-img {
-        width: 150px;
+        /* width: 150px; */
         height: auto;
         border-radius: 4px 4px 4px 4px;
     }
@@ -145,7 +145,7 @@
         padding: 1rem 0.5rem 1rem 0.5rem;
     }   
 
-    .booked_book-img {
+    .booked_book-image {
         width: 120px;
         height: auto;
         border-radius: 4px 4px 4px 4px;

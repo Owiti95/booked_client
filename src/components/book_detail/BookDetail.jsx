@@ -1,7 +1,11 @@
 import React from "react";
+import { useParams } from 'react-router-dom';
 import "./book_detail.css"
 
-const BookDetail = () => (
+const BookDetail = () => {
+    const { id } = useParams();
+    
+    return (
     <section className="booked_details-section">
         <div className="booked_card" >
             <img src="./public/book_card.jpg" className="booked_book-img" alt="book image"/>
@@ -23,5 +27,6 @@ const BookDetail = () => (
     </section>
     
 )
+}
 
 export default BookDetail;

@@ -37,7 +37,7 @@ const App = () => {
             <Route path="/store" element={<MainLayout><Store/></MainLayout>} />
             <Route path="/library" element={<MainLayout><Library/></MainLayout>} />
             <Route path="/cart" element={<MainLayout><CartCheckout/></MainLayout>} />
-            <Route path="/details" element={<MainLayout><BookDetail/></MainLayout>} />
+            <Route path="/details/:id" element={<MainLayout><BookDetail/></MainLayout>} />
             <Route path="/borrowings" element={<MainLayout><CartBorrowed/></MainLayout>} />
             <Route path="/history" element={<MainLayout><History/></MainLayout>} />
 

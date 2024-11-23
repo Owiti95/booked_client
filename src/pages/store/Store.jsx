@@ -275,7 +275,7 @@ const StoreBookList = () => {
               Uploaded on: {new Date(book.date_uploaded).toLocaleDateString()}
             </p>
             <div className="book-buttons">
-              <Link to={`/store_books/${book.id}`} className="view-details-button">
+              <Link to={`/details/:${book.id}`} className="view-details-button">
                 View Details
               </Link>
               <button
