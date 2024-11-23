@@ -13,6 +13,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Footer from "./components/footer/Footer"; // Ensure Footer is defined and imported
 import BookDetail from "./components/book_detail/BookDetail"
 import "./App.css"
+import CartBorrowed from "./pages/cart_borrowed/CartBorrowed";
+import History from "./pages/History";
 
 const MainLayout = ({ children }) => (
   <>
@@ -36,6 +38,8 @@ const App = () => {
             <Route path="/library" element={<MainLayout><Library/></MainLayout>} />
             <Route path="/cart" element={<MainLayout><CartCheckout/></MainLayout>} />
             <Route path="/details/:id" element={<MainLayout><BookDetail/></MainLayout>} />
+            <Route path="/borrowings" element={<MainLayout><CartBorrowed/></MainLayout>} />
+            <Route path="/history" element={<MainLayout><History/></MainLayout>} />
 
             {/* Route paths without login and footer */}
             <Route path="/login" element={<Login />} />
@@ -43,7 +47,7 @@ const App = () => {
             {/* Conditionally render the Register route */}
             <Route
               path="/register"
-              element={isRegistered ? <Navigate to="/login" replace /> : <Register />}
+              element= {<Register />}
             />
 
             <Route
@@ -60,7 +64,6 @@ const App = () => {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Router>
-        {/* </BrowserRouter> */}
       </UserProvider>
     </main>
   );
