@@ -2,6 +2,7 @@ import React from "react";
 import CreateLibraryBook from "../components/CreateLibraryBook";
 import LibraryDeleteEdit from "../components/LibraryDeleteEdit";
 import LendingManagement from "../components/LendingManagement";
+import AdminReturnRequests from "../components/AdminReturnRequests";
 import useLibraryBookManagement from "../hooks/useLibraryBookManagement";
 import useLendingManagement from "../hooks/useLendingManagement";
 import "../index.css";
@@ -58,6 +59,13 @@ const LibraryDashboard = () => {
           />
         )}
       </div>
+
+      {/* Section for return requests */}
+      <div className="return-requests-section">
+        <h2>Return Requests</h2>
+        <AdminReturnRequests />
+      </div>
+
     </div>
   );
 };
