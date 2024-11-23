@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import CreateEvent from "../components/CreateStoreBook";
+import React, { useState, useEffect } from "react";
+import CreateStoreBook from "../components/create_store_book/CreateStoreBook";
+
 import StoreDeleteEdit from "../components/StoreDeleteEdit";
 import OrderManagement from "../components/OrderManagement";
 import LibraryDashboard from "./LibraryDashboard";
@@ -35,23 +36,28 @@ const AdminDashboard = () => {
         Switch to {activeView === "admin" ? "Library Management" : "Store Management"}
       </button>
 
-      {activeView === "admin" ? (
-        <div className="admin-dashboard">
-          <div className="create-book-section">
-            <CreateEvent
-              onSubmit={handleFormSubmit}
-              newEvent={newBook}
-              onInputChange={handleInputChange}
-              onFileChange={handleFileChange}
-              isEditing={isEditing}
-            />
-          </div>
+
+  {activeView === "admin" ? (
+    <div className="admin-dashboard">
+      <h1 className="heading-secondary">Admin Dashboard</h1>
+
+      <div className="create-book-section">
+        <CreateStoreBook
+          onSubmit={handleFormSubmit}
+          newEvent={newBook}
+          onInputChange={handleInputChange}
+          onFileChange={handleFileChange}
+          isEditing={isEditing}
+        />
+      </div>
+
 
           <StoreDeleteEdit
             events={books}
             onEditEvent={handleEditBook}
             onDeleteEvent={handleDeleteBook}
           />
+
 
           <div className="order-management-section">
             <h2>Orders</h2>
