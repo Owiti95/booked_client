@@ -66,6 +66,22 @@ function Navbar() {
             <FaCartShopping />
           </Link>
         </li>
+
+        <li>
+          <Link className="booked_navbar-link" to="/borrowings">
+            Borrowings
+          </Link>
+        </li>
+
+
+        <li>
+          <Link className="booked_navbar-link" to="/history">
+            History
+          </Link>
+        </li>
+
+
+
         {isAdmin && (
           <li>
             <Link className="booked_navbar-link" to="/admin">
@@ -108,3 +124,4 @@ function Navbar() {
 }
 
 export default Navbar;
+
