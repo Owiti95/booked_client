@@ -87,7 +87,7 @@ const StoreBookList = () => {
             <p className="book-genre">Genre: {book.genre}</p>
             <p className="book-price">Price: ${book.price.toFixed(2)}</p>
             <div className="book-buttons">
-              <Link to={`/store_books/${book.id}`} className="view-details-button">
+              <Link to={`/details/:${book.id}`} className="view-details-button">
                 View Details
               </Link>
               <button
