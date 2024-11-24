@@ -10,7 +10,7 @@ const useOrderManagement = () => {
     const fetchOrders = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("http://localhost:5000/admin/orders", {
+        const response = await axios.get("https://booked-backend.onrender.com/admin/orders", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setOrders(response.data);
@@ -27,7 +27,7 @@ const useOrderManagement = () => {
   const handleApproveOrder = async (id, action) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/admin/approve_order/${id}`,
+        "https://booked-backend.onrender.com/admin/approve_order/${id}",
         { action },
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       );
