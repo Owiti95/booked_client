@@ -73,7 +73,6 @@ function Navbar() {
           </Link>
         </li>
 
-
         <li>
           <Link className="booked_navbar-link" to="/history">
             History
