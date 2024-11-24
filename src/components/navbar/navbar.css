@@ -1,0 +1,144 @@
+
+.booked_navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3.2rem 2rem 3.2rem;
+    
+    background-color: #171335;
+    color: #fff;
+}
+
+.booked_navbar-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50rem;
+
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+}
+
+.booked_navbar-list li {
+  transition: all 0.3s;
+
+}
+
+.booked_navbar-link {
+  font-size: 1.8rem;
+  line-height: 1.6rem;
+
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.booked_navbar-link_register {
+  font-size: 1.8rem;
+  line-height: 1.6rem;
+
+  color: #171335;
+  text-decoration: none;
+  background-color: #dcd9ef;
+
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  display: inline-block;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.booked_navbar-list li:hover  {
+  transform: scale(1.1);
+}
+
+.booked_navbar-link_register:hover  {
+  transform: scale(1.1);
+}
+
+
+/*  */
+.navbar {
+    background-color: #23499c;
+    color: #fff;
+    padding: 4rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Hamburger Icon */
+  .hamburger {
+    display: none; /* Hidden by default (for larger screens) */
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  
+  .hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Menu List */
+  .menu {
+    display: flex;
+    gap: 4rem;
+    list-style: none;
+    margin: 2;
+    padding: 0;
+    font-size: 1.5rem;
+  }
+  
+  .menu li {
+    margin: 0;
+  }
+  
+  .menu a,
+  .menu button {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .menu a:hover,
+  .menu button:hover {
+    color: #7167c1;
+  }
+  
+  /* Show/Hide Menu on Small Screens */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex; /* Show hamburger icon */
+    }
+  
+    .menu {
+      display: none; /* Hide menu by default */
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #1d6392;
+      padding: 1rem;
+      width: 25%;
+      max-width: 300px;
+      box-shadow: 0 4px 6px rgba(177, 220, 240, 0.1);
+    }
+  
+    .menu.open {
+      display: flex; /* Show menu when open */
+    }
+  }
+  

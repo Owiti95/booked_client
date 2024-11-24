@@ -1,0 +1,140 @@
+.booked_footer {
+    padding: 12.8rem 0;
+    border-top: 1px solid var(--main-color, black);
+  }
+
+.booked_footer-container {
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+    column-gap: 6.4rem;
+    row-gap: 9.6rem;
+    align-items: center;
+    justify-content: center;
+}
+  
+.booked_logo-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.booked_footer-logo {
+    display: block;
+    margin-bottom: 3.2rem;
+  }
+
+.logo {
+    width: 20rem;
+  }
+  
+.booked_social-links {
+    list-style: none;
+    display: flex;
+    gap: 2.4rem;
+  }
+  
+.booked_social-icon {
+    height: 2.4rem;
+    width: 2.4rem;
+  }
+  
+.booked_copyright {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #767676;
+    margin-top: auto;
+  }
+  
+.booked_footer-heading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 4rem;
+  }
+  
+.booked_contacts{
+    font-style: normal;
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+  
+.booked_address {
+    margin-bottom: 2.4rem;
+  }  
+
+.booked_footer-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  
+.booked_footer-link:link,
+.booked_footer-link:visited {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #767676;
+    transition: all 0.3s;
+  }
+  
+.footer-link:hover,
+.footer-link:active {
+    color: #555;
+  }
+
+@media screen and (max-width: 1100px) {
+.booked_footer-container {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+    grid-template-columns: 1.5fr 1.5fr 1fr;
+}
+}
+
+
+@media screen and (max-width: 950px) {
+    .booked_footer-container {
+        column-gap: 3.6rem;
+        row-gap: 5.6rem;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .logo {
+        width: 15rem;
+      }
+
+      .booked_footer {
+        padding: 10rem 0;
+      }
+}
+
+@media screen and (max-width: 800px) {
+    .booked_footer-container {
+        column-gap: 4.8rem;
+        row-gap: 6.4rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .booked_footer {
+      padding: 8rem 0;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .booked_footer-container {
+        column-gap: 3.6rem;
+        row-gap: 2.4rem;
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        width: 12rem;
+      }
+
+      .booked_footer {
+        padding: 4rem 0;
+      }
+}
