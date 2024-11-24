@@ -15,6 +15,8 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("hello");
+    
 
     try {
       // Send login credentials to the backend
