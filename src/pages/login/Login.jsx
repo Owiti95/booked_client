@@ -19,7 +19,7 @@ const Login = () => {
     try {
       // Send login credentials to the backend
       const response = await axios.post(
-        "http://127.0.0.1:5000/user/login",
+        "https://booked-backend.onrender.com/user/login",
         { email, password },
         { withCredentials: true } // Include cookies for CSRF protection, if applicable
       );
