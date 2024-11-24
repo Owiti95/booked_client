@@ -9,7 +9,7 @@ const AdminReturnRequests = () => {
   // Fetch return requests
   useEffect(() => {
     axios
-      .get('http://localhost:5000/admin/return_requests', {
+      .get('https://booked-backend.onrender.com/admin/return_requests', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
