@@ -1,31 +1,17 @@
 import React from "react";
+import BookCardStore from "./book_card_store/BookCardStore";
 
 const LibraryDeleteEdit = ({ books, onEditBook, onDeleteBook }) => {
   return (
-    <div className="book-list">
-      <h2>Library Book List</h2>
+    <div className="event-list">
+      <h2 className="heading-tertiary" style={{textAlign: "center", marginTop: "4.8rem", marginBottom: "2.4rem"}}>Library Book List</h2>
       {books.length === 0 ? (
         <p>No library books available</p>
       ) : (
-        <ul>
+        <ul className="booked_book-items">
           {books.map((book) => (
-            <li key={book.id} className="book-item">
-              <h3>{book.title}</h3>
-              <p><strong>Author:</strong> {book.author}</p>
-              <p><strong>Genre:</strong> {book.genre}</p>
-              <p><strong>ISBN:</strong> {book.isbn}</p>
-              <p><strong>Copies Available:</strong> {book.copies_available}</p>
-              {book.image_url && (
-                <img
-                  src={book.image_url}
-                  alt={book.title}
-                  className="book-image"
-                />
-              )}
-              <div className="action-buttons">
-                <button onClick={() => onEditBook(book)}>Edit</button>
-                <button onClick={() => onDeleteBook(book.id)}>Delete</button>
-              </div>
+            <li key={book.id} className="booked_book-item">
+              <BookCardStore title={book.title} author={book.author} genre={book.genre} isbn={book.isbn} stock={book.copies_available} img_url={book.image_url} onEdit={onEditBook} onDelete={onDeleteBook} book={book} book_id={book.id}/>
             </li>
           ))}
         </ul>

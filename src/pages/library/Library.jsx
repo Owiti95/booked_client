@@ -98,7 +98,7 @@ const Library = () => {
               Available Copies: {book.available_copies}
             </p>
             <div className="book-buttons">
-              <Link to={`/library_books/${book.id}`} className="view-details-button">
+              <Link to={`/details/:${book.id}`} className="view-details-button">
                 View Details
               </Link>
               <button
