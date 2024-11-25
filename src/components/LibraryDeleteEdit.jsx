@@ -11,7 +11,7 @@ const LibraryDeleteEdit = ({ books, onEditBook, onDeleteBook }) => {
         <ul className="booked_book-items">
           {books.map((book) => (
             <li key={book.id} className="booked_book-item">
-              <BookCardStore title={book.title} author={book.author} genre={book.genre} isbn={book.isbn} stock={book.copies_available} img_url={book.image_url} onEdit={onEditBook} onDelete={onDeleteBook} book={book}/>
+              <BookCardStore title={book.title} author={book.author} genre={book.genre} isbn={book.isbn} stock={book.copies_available} img_url={book.image_url} onEdit={onEditBook} onDelete={onDeleteBook} book={book} book_id={book.id}/>
             </li>
           ))}
         </ul>
