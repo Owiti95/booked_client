@@ -27,7 +27,7 @@ const LibraryDashboard = () => {
   } = useLendingManagement();
 
   return (
-    <div className="library-dashboard">
+    <div className="dashboard">
       <h1 className="page-title">Library Dashboard</h1>
 
       <div className="create-book-section">
