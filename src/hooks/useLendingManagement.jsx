@@ -11,7 +11,7 @@ const useLendingManagement = () => {
     const fetchBorrowings = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("https://booked-backend.onrender.com/admin/borrowings", {
+        const response = await axios.get("http://localhost:5000/admin/borrowings", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setBorrowings(response.data);
@@ -29,7 +29,7 @@ const useLendingManagement = () => {
   const handleLendingAction = async (id, action) => {
     try {
       const response = await axios.post(
-        "https://booked-backend.onrender.com/admin/approve_lending/${id}",
+        `http://localhost:5000/admin/approve_lending/${id}`,
         { action },
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       );

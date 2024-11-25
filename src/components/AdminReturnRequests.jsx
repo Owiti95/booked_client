@@ -9,7 +9,7 @@ const AdminReturnRequests = () => {
   // Fetch return requests
   useEffect(() => {
     axios
-      .get('https://booked-backend.onrender.com/admin/return_requests', {
+      .get('http://localhost:5000/admin/return_requests', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
@@ -28,7 +28,7 @@ const AdminReturnRequests = () => {
   const handleConfirmReturn = (borrowingId) => {
     axios
       .patch(
-        'https://booked-backend.onrender.com/admin/confirm_return',
+        'http://localhost:5000/admin/confirm_return',
         { borrowing_id: borrowingId },
         {
           headers: {
