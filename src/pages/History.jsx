@@ -60,7 +60,7 @@ const History = () => {
     const token = localStorage.getItem('token');
     try {
       await axios.post(
-        'http://127.0.0.1:5000/user/initiate_return',
+        'https://booked-backend.onrender.com/user/initiate_return',
         { borrowing_id: borrowingId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -88,7 +88,7 @@ const History = () => {
     try {
       const sale = sales.find((sale) => sale.id === currentSaleId);
       const response = await axios.post(
-        'http://127.0.0.1:5000/user/buyGoods',
+        'https://booked-backend.onrender.com/user/buyGoods',
         { amount: sale.total_price, phone_number: phoneNumber },
         { headers: { Authorization: `Bearer ${token}` } }
       );

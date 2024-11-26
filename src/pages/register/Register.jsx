@@ -14,7 +14,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:5000/user/register", { name, email, password });
+      const response = await axios.post("https://booked-backend.onrender.com/user/register", { name, email, password });
       console.log("Registration successful:", response.data);
 
       // Set registration status in localStorage

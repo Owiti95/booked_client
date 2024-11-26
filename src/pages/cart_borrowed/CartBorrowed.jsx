@@ -228,7 +228,7 @@ const CartBorrowed = () => {
       }
 
       try {
-        const response = await axios.get('http://127.0.0.1:5000/user/borrowings', {
+        const response = await axios.get('https://booked-backend.onrender.com/user/borrowings', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setBorrowings(response.data);
@@ -244,7 +244,7 @@ const CartBorrowed = () => {
   const removeBorrowing = async (bookId) => {
     const token = localStorage.getItem('token');
     try {
-      await axios.delete('http://127.0.0.1:5000/user/remove_from_borrowings', {
+      await axios.delete('https://booked-backend.onrender.com/user/remove_from_borrowings', {
         headers: { Authorization: `Bearer ${token}` },
         data: { book_id: bookId },
       });
