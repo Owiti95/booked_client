@@ -7,11 +7,11 @@ const BookCardStore = ({title, author, genre, isbn, price, stock, img_url, book,
         <div className="booked_card-info">
             <p className="booked_card-title">{title}</p>
             <div className="booked_card-details">
-                <p className="booked_card-author"><span className="booked_strong">Author:</span>{author}</p>
-                <p className="booked_card-author"><span className="booked_strong">Genre:</span>{genre}</p>
-                <p className="booked_card-author"><span className="booked_strong">ISBN:</span>{isbn}</p>
-                <p className="booked_card-author"><span className="booked_strong">Price:</span>{price}</p>
-                <p className="booked_card-author"><span className="booked_strong">Stock:</span>{stock}</p>
+                <p className="booked_card-detail"><span className="booked_strong">Author:</span>{author}</p>
+                <p className="booked_card-detail"><span className="booked_strong">Genre:</span>{genre}</p>
+                <p className="booked_card-detail"><span className="booked_strong">ISBN:</span>{isbn}</p>
+                <p className="booked_card-detail"><span className="booked_strong">Price:</span>{price}</p>
+                <p className="booked_card-detail"><span className="booked_strong">Stock:</span>{stock}</p>
             </div>
 
             <div className="booked_btns">

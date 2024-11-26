@@ -1,47 +1,17 @@
-.booked_card {
-    width: 30rem;
-    background-color: var(--secondary-color);
-    height: Hug (40rem)rem;
-    top: 224em;
-    left: 60em;
-    padding: 2rem 1.5rem 2rem 1.5rem;
-    border-radius: 0.5em 0.5em 0em 0em;
-    
-    border: 1px solid #0909371A;
-}
-
-.booked_book-img {
-    /* width: 200px; */
-    height: auto;
-    border-radius: 4px 4px 4px 4px;
-}
-
-.booked_card-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 0.5rem;
-    padding: 10px 0px 10px 0px;
-}
-
 .booked_card-info div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    gap: 0.5rem;
 }
 
-.booked_card-title {
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: 25px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+.booked_card-details_container {
+    display: flex;
+    flex-direction: column;
 }
 
-.booked_card-author {
-    font-size: 1.6rem;
+.booked_card-detail {
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 20px;
     text-align: left;
@@ -50,7 +20,7 @@
 }
 
 .booked_card-price {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     font-weight: 700;
     line-height: 30px;
     text-align: left;
@@ -65,9 +35,9 @@
     display: inline-block;
 
     text-decoration: none;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    padding: 1rem 2rem;
+    padding: 0.3rem 0.6rem;
     border-radius: 9px;
     
     color: #ffff;
@@ -86,7 +56,6 @@
 @media screen and (max-width: 950px) {
     .booked_card {
         width: 25rem;
-        height: Hug (35rem)rem;
         top: 200em;
         left: 50em;
         padding: 1.5rem 0.75rem 1.5rem 0.75rem;

@@ -292,9 +292,11 @@ a:hover {
 /* ********************* */
 .booked_book-items {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 3.2rem;
 }
 
 /* Responsive design */
@@ -333,4 +335,179 @@ a:hover {
 @media (max-width: 480px) {
   .booked_book-items {
     grid-template-columns: repeat(1, 1fr);}
+}
+
+/********************************************/
+/* Book Cards*/
+/********************************************/
+.book-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 3.2rem;
+}
+
+.booked_card {
+  width: 20rem;
+  background-color: var(--secondary-color);
+  padding: 2rem 1.5rem 2rem 1.5rem;
+  border-radius: 0.5em;
+  border: 1px solid #0909371A;
+  transition: all 0.3s;
+}
+
+.booked_card:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  scale: 1.02;
+}
+
+.booked_book-image {
+  width: 16rem;
+  height: 21rem;
+  border-radius: 4px 4px 4px 4px;
+}
+
+.booked_card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.2rem;
+  padding: 10px 0px 10px 0px;
+}
+
+.booked_card-info div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.booked_card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 25px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.booked_card-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: self-start;
+  gap:1rem;
+  margin:1rem 0rem 1rem 0rem;
+}
+
+.booked_strong {
+  font-weight: 700;
+}
+
+/* Media Queries */
+@media screen and (max-width: 950px) {
+  .booked_card {
+      /* width: 25rem; */
+      left: 50em;
+      padding: 1.5rem 0.75rem 1.5rem 0.75rem;
+  }
+
+  .booked_book-img {
+      /* width: 150px; */
+      height: auto;
+      border-radius: 4px 4px 4px 4px;
+  }
+
+  .booked_card-info {
+      gap: 0.3rem;
+      padding: 8px 0px 8px 0px;
+  }
+
+  .booked_card-title {
+      font-size: 1.4rem;
+      line-height: 20px;
+  }
+
+  .booked_card-author {
+      font-size: 1.4rem;
+      line-height: 16px;
+  }
+
+  .booked_card-price {
+      font-size: 1.8rem;
+      line-height: 25px;
+  }
+
+  .booked_btn,
+  .booked_btn:link,
+  .booked_btn:visited {
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+}
+
+@media screen and (max-width: 700px) {
+  .booked_card {
+      /* width: 20rem; */
+      left: 50em;
+      padding: 1rem 0.5rem 1rem 0.5rem;
+  }   
+
+  .booked_book-image {
+      width: 120px;
+      height: auto;
+      border-radius: 4px 4px 4px 4px;
+  }
+
+  .booked_card-info {
+      gap: 0.2rem;
+      padding: 5px 0px 5px 0px;
+  }
+
+  .booked_card-title {
+      font-size: 1.2rem;
+      line-height: 16px;
+  }
+
+  .booked_card-author {
+      font-size: 1rem;
+      line-height: 12px;
+  }
+
+  .booked_btn,
+  .booked_btn:link,
+  .booked_btn:visited {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+}
+}
+
+/********************************************/
+/* Store and library pages*/
+/********************************************/
+.booked_create-event_form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2rem;
+  justify-content: space-around;
+  margin-bottom: 2.4rem;
+}
+
+.book-list {
+  margin: 0 auto;
+  max-width: 120rem;
+  padding: 0 3.2rem;
+}
+
+.search-input {
+  padding: 0.8rem 1rem;
+  font-size: 1.2rem;
+  border: 2px solid #000;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
 }

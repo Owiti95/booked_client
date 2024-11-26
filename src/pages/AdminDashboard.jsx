@@ -30,6 +30,7 @@ const AdminDashboard = () => {
 
   return (
     <div className="dashboard">
+      <h2 className="heading-secondary">Admin Dashboard</h2>
       <h1 className="page-title">{activeView === "admin" ? "Store Management" : "Library Management"}</h1>
 
       <button className="toggle-view-btn" onClick={handleToggleView}>
@@ -39,7 +40,6 @@ const AdminDashboard = () => {
 
   {activeView === "admin" ? (
     <div className="admin-dashboard">
-      <h1 className="heading-secondary">Admin Dashboard</h1>
 
       <div className="create-book-section">
         <CreateStoreBook
@@ -51,12 +51,13 @@ const AdminDashboard = () => {
         />
       </div>
 
-
+      <div className="book-cards-container">
           <StoreDeleteEdit
             events={books}
             onEditEvent={handleEditBook}
             onDeleteEvent={handleDeleteBook}
           />
+      </div>
 
 
           <div className="order-management-section">

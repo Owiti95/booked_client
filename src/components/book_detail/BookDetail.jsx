@@ -7,7 +7,7 @@ const BookDetail = () => {
     
     return (
     <section className="booked_details-section">
-        <div className="booked_card" >
+        <div className="booked_details-card" >
             <img src="./public/book_card.jpg" className="booked_book-img" alt="book image"/>
         </div>
         <div>
