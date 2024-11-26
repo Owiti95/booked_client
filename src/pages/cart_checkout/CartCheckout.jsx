@@ -18,7 +18,7 @@ const CartCheckout = () => {
       }
 
       try {
-        const response = await axios.get('http://127.0.0.1:5000/user/cart', {
+        const response = await axios.get('https://booked-backend.onrender.com/user/cart', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setCartItems(response.data);
@@ -40,7 +40,7 @@ const CartCheckout = () => {
     const token = localStorage.getItem('token');
     try {
       const response = await axios.post(
-        'http://127.0.0.1:5000/user/add_to_cart',
+        'https://booked-backend.onrender.com/user/add_to_cart',
         { book_id: bookId, quantity: newQuantity },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -60,7 +60,7 @@ const CartCheckout = () => {
   const removeItem = async (bookId) => {
     const token = localStorage.getItem('token');
     try {
-      await axios.delete('http://127.0.0.1:5000/user/remove_from_cart', {
+      await axios.delete('https://booked-backend.onrender.com/user/remove_from_cart', {
         headers: { Authorization: `Bearer ${token}` },
         data: { book_id: bookId },
       });
@@ -79,7 +79,7 @@ const CartCheckout = () => {
     const token = localStorage.getItem('token');
     try {
       const response = await axios.post(
-        'http://127.0.0.1:5000/user/checkout',
+        'https://booked-backend.onrender.com/user/checkout',
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

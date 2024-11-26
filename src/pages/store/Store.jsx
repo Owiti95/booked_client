@@ -18,7 +18,7 @@ const StoreBookList = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:5000/user/store_books");
+        const response = await axios.get("https://booked-backend.onrender.com/user/store_books");
         setBooks(response.data);
         setFilteredBooks(response.data);
       } catch (err) {
@@ -70,7 +70,7 @@ const StoreBookList = () => {
     
     try {
       const response = await axios.post(
-        "http://127.0.0.1:5000/user/add_to_cart",
+        "https://booked-backend.onrender.com/user/add_to_cart",
         { book_id: bookId, quantity: 1 },
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -19,7 +19,7 @@ const History = () => {
       }
 
       try {
-        const response = await axios.get('http://127.0.0.1:5000/user/all_borrowings', {
+        const response = await axios.get('https://booked-backend.onrender.com/user/all_borrowings', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setBorrowings(response.data);
@@ -42,7 +42,7 @@ const History = () => {
       }
 
       try {
-        const response = await axios.get('http://127.0.0.1:5000/user/sales_history', {
+        const response = await axios.get('https://booked-backend.onrender.com/user/sales_history', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setSales(response.data);
@@ -60,7 +60,7 @@ const History = () => {
     const token = localStorage.getItem('token');
     try {
       await axios.post(
-        'http://127.0.0.1:5000/user/initiate_return',
+        'https://booked-backend.onrender.com/user/initiate_return',
         { borrowing_id: borrowingId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -88,7 +88,7 @@ const History = () => {
     try {
       const sale = sales.find((sale) => sale.id === currentSaleId);
       const response = await axios.post(
-        'http://127.0.0.1:5000/user/buyGoods',
+        'https://booked-backend.onrender.com/user/buyGoods',
         { amount: sale.total_price, phone_number: phoneNumber },
         { headers: { Authorization: `Bearer ${token}` } }
       );

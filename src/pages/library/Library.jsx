@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import BookCard from "../../components/book_card/BookCard";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+// Library
 const Library = () => {
   const [books, setBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
@@ -12,7 +12,7 @@ const Library = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:5000/user/library_books", {
+        const response = await axios.get("https://booked-backend.onrender.com/user/library_books", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`, // Include JWT token
           },
@@ -43,7 +43,7 @@ const Library = () => {
   const handleBorrowBook = async (bookId) => {
     try {
       const response = await axios.post(
-        "http://127.0.0.1:5000/user/borrow_book",
+        "https://booked-backend.onrender.com/user/borrow_book",
         { book_id: bookId },
         {
           headers: {

@@ -18,7 +18,7 @@ const useBookManagement = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/admin/view_books", {
+        const response = await axios.get("https://booked-backend.onrender.com/admin/view_books", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setBooks(response.data);
@@ -38,7 +38,7 @@ const useBookManagement = () => {
     try {
       if (isEditing) {
         const response = await axios.put(
-          `http://localhost:5000/admin/store_books/${editingBookId}`,
+          `https://booked-backend.onrender.com/admin/store_books/${editingBookId}`,
           formData,
           { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
         );
@@ -48,7 +48,7 @@ const useBookManagement = () => {
         setBooks(updatedBooks);
       } else {
         const response = await axios.post(
-          "http://localhost:5000/admin/store_books",
+          "https://booked-backend.onrender.com/admin/store_books",
           formData,
           { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
         );
@@ -86,7 +86,7 @@ const useBookManagement = () => {
 
   const handleDeleteBook = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/admin/store_books/${id}`, {
+      await axios.delete(`https://booked-backend.onrender.com/admin/store_books/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setBooks(books.filter((book) => book.id !== id));
