@@ -27,9 +27,7 @@ const LibraryDashboard = () => {
   } = useLendingManagement();
 
   return (
-    <div className="dashboard">
-      <h1 className="page-title">Library Dashboard</h1>
-
+    <div className="admin-dashboard">
       <div className="create-book-section">
         <CreateLibraryBook
           onSubmit={handleFormSubmit}
@@ -40,11 +38,13 @@ const LibraryDashboard = () => {
         />
       </div>
 
+      <div className="book-cards-container">
       <LibraryDeleteEdit
         books={books}
         onEditBook={handleEditBook}
         onDeleteBook={handleDeleteBook}
       />
+      </div>
 
       <div className="lending-management-section">
         <h2>Borrow Requests</h2>
