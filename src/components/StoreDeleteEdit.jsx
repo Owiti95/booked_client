@@ -4,7 +4,7 @@ import BookCardStore from "./book_card_store/BookCardStore";
 const EventList = ({ events, onEditEvent, onDeleteEvent }) => {
   return (
     <div className="event-list">
-      <h2 className="heading-tertiary" style={{textAlign: "center", marginTop: "4.8rem", marginBottom: "2.4rem"}}>Book List</h2>
+      <h2 className="heading-tertiary" style={{textAlign: "center", marginTop: "4.8rem", marginBottom: "2.4rem"}}>Store Book List</h2>
       {events.length === 0 ? (
         <p>No books available</p>
       ) : (

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import BookCard from "../../components/book_card/BookCard";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -62,13 +63,14 @@ const Library = () => {
   };
 
   return (
-    <div className="library-book-list">
+    <div className="book-list">
       {error && <p className="error-message">{error}</p>}
-      <h1 className="page-title">
-        <i>Library Books</i>
+      <h1 className="heading-secondary">
+        Library Books
       </h1>
 
-      <div className="search-form">
+      <div className="booked_create-event_form">
+        <div className="booked_input-container">
         <input
           type="text"
           placeholder="Search books by title or genre"
@@ -76,38 +78,16 @@ const Library = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
           className="search-input"
         />
-        <button onClick={handleSearch} className="search-button">
+        </div>
+        <button onClick={handleSearch} className="btn">
           Search
         </button>
       </div>
 
       <div className="book-cards-container">
         {filteredBooks.map((book) => (
-          <div className="book-card" key={book.id}>
-            {book.image_url && (
-              <img
-                src={book.image_url}
-                alt={book.title}
-                className="book-image"
-              />
-            )}
-            <h2 className="book-title">{book.title}</h2>
-            <p className="book-author">Author: {book.author}</p>
-            <p className="book-genre">Genre: {book.genre}</p>
-            <p className="book-copies">
-              Available Copies: {book.available_copies}
-            </p>
-            <div className="book-buttons">
-              <Link to={`/library_books/${book.id}`} className="view-details-button">
-                View Details
-              </Link>
-              <button
-                onClick={() => handleBorrowBook(book.id)}
-                className="borrow-book-button"
-              >
-                Borrow Book
-              </button>
-            </div>
+          <div key={book.id}>
+            <BookCard image_url={book.image_url} title={book.title} author={book.author} genre={book.genre} book_id={book.id} onAddToCart={handleBorrowBook} addText="Borrow Book" isLibrary={true} available_copies={book.available_copies}/>
           </div>
         ))}
       </div>
