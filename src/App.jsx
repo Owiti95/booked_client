@@ -36,13 +36,14 @@ const App = () => {
             <Route path="/" element={<MainLayout><Home/></MainLayout>} />
             <Route path="/store" element={<MainLayout><Store/></MainLayout>} />
             <Route path="/library" element={<MainLayout><Library/></MainLayout>} />
-            <Route path="/cart" element={<MainLayout><CartCheckout/></MainLayout>} />
+            {/* <Route path="/cart" element={<MainLayout><CartCheckout/></MainLayout>} /> */}
             <Route path="/details/:id" element={<MainLayout><BookDetail/></MainLayout>} />
             <Route path="/borrowings" element={<MainLayout><CartBorrowed/></MainLayout>} />
             <Route path="/history" element={<MainLayout><History/></MainLayout>} />
 
             {/* Route paths without login and footer */}
             <Route path="/login" element={<Login />} />
+            <Route path="/cart" element={<CartCheckout/>} />
 
             {/* Conditionally render the Register route */}
             <Route
